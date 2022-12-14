@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #92a2ff;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to top, #b99396, #f7e0cd, #cedfe6, #f3f4f6);
+    /*background: url("https://assets.codepen.io/550547/winterCabin.jpg") no-repeat;*/
+    background-size: 100%;
+}
+
+body.afternoon {
+    background-image: linear-gradient(to top, #705557, #c2aba5, #f5e3d1, #9cc4e0, #73a3c5, #2679a8);
+}
+
+body.evening {
+    background-image: linear-gradient(to top, #363d59, #605e77, #696e91, #9c81a8, #d189a8, #febcbc);
+}
+
+body.night {
+    background-image: linear-gradient(to bottom, #0d122c, #0f1736, #111c40, #14204b, #162556, #17285d, #182c63, #192f6a, #19326e, #193572, #183876, #183b7a);
+}
+
+.snowflake {
+    color: #fff;
+    position: absolute;
+    top: -20px;
+    animation: fall ease-in forwards;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-image: linear-gradient(60deg, #6f6fdd, #95b7f5, #b9caea, #e8cff2, #f555d5);
+    z-index: 2;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.speed,
+.direction,
+.time {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.speed span,
+.direction span,
+.time span {
+    margin-right: 10px;
+    color: #0b5690;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+input,
+label {
+    cursor: pointer;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    height: 4px;
+    width: 200px;
+    outline: 0;
+    background-color: #2ca1eb;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid #2ca1eb;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+input[type=radio] {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+}
+
+input[type=radio]:checked {
+    -webkit-appearance: none;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #2ca1eb;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type=radio]:checked::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #2ca1eb;
+}
+
+#snowman {
+    position: absolute;
+    left: 15rem;
+    bottom: 0;
+    z-index: 99;
+
+}
+
+@keyframes fall {
+    to {
+        transform: translateX(0vw) translateY(100vh);
+    }
+}
+
+@keyframes fall-right {
+    to {
+        transform: translateX(30vw) translateY(100vh);
+    }
+}
+
+@keyframes fall-left {
+    to {
+        transform: translateX(-30vw) translateY(100vh);
+    }
+}
